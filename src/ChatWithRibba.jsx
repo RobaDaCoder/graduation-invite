@@ -3,7 +3,7 @@ import styles from './ChatWithRibba.module.css';
 import useChatbox from './eventHandler';
 
 const ribbaAvatar = "https://i.pinimg.com/736x/ad/39/25/ad392542df831f9fea026691d1ecec67.jpg";
-const notificationSound = new Audio('../notice.mp3');
+const notificationSound = new Audio('/graduation-invite/notice.mp3');
 
 export default function ChatWithRibba({ setInvitationInfo , inEnglish }) {
   const { textareaRef } = useChatbox();
