@@ -80,12 +80,12 @@ function App() {
             <span className={styles.headerText} data-value={label} ref={headerRef}>{label}</span>  
           </div>  
         </div>
-        <img src="../ghibli.png"/>
+        <img src="/ghibli.png"/>
       </div>
       <div className={styles.bodyContainer}>
         <div className={styles.logoContainer}>
           <div className={styles.logoWrapper}>
-            <img src="../boss.jpg" onClick={toggleChat}/>
+            <img src="/boss.jpg" onClick={toggleChat}/>
             <span className={styles.welcomeMessage}>{inEnglish ? "Xin chào!": "Hello!"}</span>
           </div>
           <div className={styles.logoText}>

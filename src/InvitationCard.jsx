@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './InvitationCard.module.css';
 
-const img_friend_path = "../avatars/";
+const img_friend_path = "/avatars/";
 
 export default function InvitationCard({ info , inEnglish }) {
   const name = info?.name || "Những người mà Bảo iu quý";
