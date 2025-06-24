@@ -1,11 +1,14 @@
 {
+  "homepage": "https://RobaDaCoder.github.io/graduation-invite/",
   "name": "frontend",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
