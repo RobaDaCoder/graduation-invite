@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './ChatWithRibba.module.css';
 import useChatbox from './eventHandler';
+import { checkMessage } from './component/checkMessage';
 
 const ribbaAvatar = "https://i.pinimg.com/736x/ad/39/25/ad392542df831f9fea026691d1ecec67.jpg";
 const notificationSound = new Audio('/graduation-invite/notice.mp3');
+
 
 export default function ChatWithRibba({ setInvitationInfo , inEnglish }) {
   const { textareaRef } = useChatbox();
@@ -13,12 +15,7 @@ export default function ChatWithRibba({ setInvitationInfo , inEnglish }) {
   const [userInteracted, setUserInteracted] = useState(false);
 
   async function handleUserMessage(message) {
-    const res = await fetch('http://localhost:5000/api/check-message', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message })
-    });
-    const data = await res.json();
+    const data = checkMessage(message);
     addReplyMessage(inEnglish ? data.reply[1] : data.reply[0]);
 
     if (setInvitationInfo) {
