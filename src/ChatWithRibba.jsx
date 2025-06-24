@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './ChatWithRibba.module.css';
 import useChatbox from './eventHandler';
-import axios from 'axios';
 
 const ribbaAvatar = "https://i.pinimg.com/736x/ad/39/25/ad392542df831f9fea026691d1ecec67.jpg";
 const notificationSound = new Audio('../notice.mp3');

@@ -8,7 +8,6 @@ const letters = "ABCDEFJHIJKLMNOPQRSTUVWXYZ"
 const desktopText = "CHÀO MỪNG ĐẾN VỚI NHÀ CỦA ROBA!";
 const desktopTextEnglish = "WELCOME TO ROBA'S HOUSE!";
 const mobileText = "WELCOME!";
-const backgroundMusic = new Audio('../background_music.mp3');
 
 function App() {
   const [invitationInfo, setInvitationInfo] = useState(null);
@@ -16,28 +15,6 @@ function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
   const [inEnglish, setInEnglish] = useState(false);
   
-  useEffect(() => {
-    backgroundMusic.loop = true;
-    backgroundMusic.volume = 0.2;
-
-    // Handler to play music on first user interaction
-    const startMusic = () => {
-      backgroundMusic.play().catch(error => console.error("Error playing music:", error));
-      window.removeEventListener('click', startMusic);
-      window.removeEventListener('keydown', startMusic);
-    };
-
-    window.addEventListener('click', startMusic);
-    window.addEventListener('keydown', startMusic);
-
-    return () => {
-      backgroundMusic.pause();
-      backgroundMusic.currentTime = 0;
-      window.removeEventListener('click', startMusic);
-      window.removeEventListener('keydown', startMusic);
-    };
-  }, []);
-
   // Listen to resize, update isMobile
   useEffect(() => {
     function handleResize() {
@@ -75,6 +52,15 @@ function App() {
   }, [isMobile]);
 
   const toggleChat = () => {
+    if (isMobile) {
+      setInvitationInfo({
+        name: "Những người mà Bảo iu quý",
+        key: "seeto",
+        pronoun: "cả nhà",
+        note: "Rất mong gặp được cả nhà mình tại ngày tốt nghiệp của Bảo!",
+        fetch: false
+      });
+    }
     setShowChat(!showChat);
   };
 
@@ -103,10 +89,10 @@ function App() {
             <span className={styles.welcomeMessage}>{inEnglish ? "Xin chào!": "Hello!"}</span>
           </div>
           <div className={styles.logoText}>
-            <span className={styles.logoTextContent}>roba co.</span>
+            <span className={styles.logoTextContent}>{isMobile ? "robaco." : "roba co."}</span>
           </div>
         </div>
-        {showChat && (
+        {!isMobile && showChat && (
           <div className={styles.chatContainer}>
             <ChatWithRibba setInvitationInfo={setInvitationInfo} inEnglish={inEnglish}/>
           </div>
