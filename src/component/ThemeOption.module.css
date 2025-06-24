@@ -1,0 +1,40 @@
+.themeContainer {
+    position: absolute;
+    display: flex;
+    right: 2%;
+    top: 2%;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.themeOption {
+    width: 9vh;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-border-color);
+    border-radius: 2vh;
+    background-color: var(--primary-background-color);
+    transition: all 0.5s ease;
+    color: var(--primary-text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+}
+
+.themeOption:hover {
+    box-shadow: 0 0 3vh var(--box-shadow);
+    rotate: -5deg
+}
+
+#theme-light {
+  background-color: #fff;
+  border-color: #000;
+}
+
+#theme-dark {
+  background-color: #000;
+  border-color: #fff;
+}

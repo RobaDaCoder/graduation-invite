@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
+
+.chatboxWrapper {
+    height: 67vh;
+    width: 40vh;
+    position: relative;
+    background-color: rgba(100, 100, 100, 0.4);
+    border-radius: 7vh 7vh 5vh 5vh;
+    border: 2px solid var(--primary-border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chatboxHeader {
+    position: relative;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--revert);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 7vh 7vh 0 0;
+}
+
+.chatboxHeaderContainer {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    padding: 5%;
+}
+
+.chatboxHeader img {
+    height: 7vh;
+    width: 7vh;
+    border-radius: 50%;
+    margin-left: 1vh;
+}
+
+.chatboxHeaderInfo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 2vh;
+    font-size: 2.5vh;
+    font-family: "Fuzzy Bubbles", sans-serif;
+    color: #fff;
+    font-weight: bold;
+}
+
+.chatboxMessageContent {
+    flex: 1;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 3vh;
+    overflow-y: auto;
+}
+
+.chatboxMessageItem {
+    font-size: 100%;
+    width: 85%;
+    padding: 1vh;
+}
+
+.chatboxMessageItem.sent {
+    align-self: flex-end;
+    background-color: #fff;
+    color: #000;
+    border-radius: 1vh 0 1vh 1vh;
+    box-shadow: .5vh .5vh 1.2vh rgba(0, 0, 0, .6);
+}
+
+.chatboxMessageItem.receive {
+    background-color: #fff;
+    border-radius: 0 1vh 1vh 1vh;
+    box-shadow: .5vh .5vh 1.2vh rgba(0, 0, 0, .6);
+}
+
+.chatboxMessageBottom {
+    background: var(--white);
+    padding: 2vh;
+}
+
+.chatboxMessageForm {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 1.5vh;
+    padding: 1vh 1vh;
+}
+
+.chatboxMessageInput {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    resize: none;
+    scrollbar-width: none;
+}
+
+.chatboxMessageInput::-webkit-scrollbar {
+    display: none;
+}

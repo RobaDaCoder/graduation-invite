@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.appContainer {
+  /* This is the main container for the app */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: var(--container-background-color);
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+}
+
+.languageContainer {
+    position: absolute;
+    display: flex;
+    left: 2%;
+    top: 2%;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.languageOption {
+    width: auto;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-border-color);
+    border-radius: 2vh;
+    background-color: var(--primary-background-color);
+    transition: all 0.5s ease;
+    color: var(--primary-text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+}
+
+.headerContainer {
+  position: relative;
+  margin: 7vh auto 0 auto;  /* Top margin and center horizontally */
+  height: 10vh;    
+  z-index: 9990;        
+}
+
+.headerBar {
+  background-color: var(--primary-border-color);      /* Change to your preferred color rgb(39, 228, 228)*/
+  border-radius: 3vh;
+  width: 75vw;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 5vh var(--img-shadow);
+  justify-content: center;
+}
+
+.headerContainer img {
+  position: absolute;
+  top: -50%;               /* Let head float above bar, adjust as needed */
+  height: 150%;            /* Adjust so head sticks out above */
+  object-fit: contain;
+  pointer-events: none;     /* Picture can't block clicking the bar */
+  /* Optional drop-shadow for effect: */
+  filter: drop-shadow(0 0 2vh var(--img-shadow));
+  border-radius: 3vh;
+  transition: all 0.5s ease;
+}
+
+.headerContainer:hover img {
+  top: -65%;               /* Let head float above bar, adjust as needed */
+  height: 165%;            /* Adjust so head sticks out above */
+  filter: drop-shadow(0 0 1.5vh rgba(127, 219, 255, 0.7));
+}
+
+.headerContent {
+  height: 100%;             /* Fill bar vertically */
+  display: flex;
+  align-items: center;
+}
+
+.headerText {
+  color: var(--primary-background-color);
+  font-size: 200%;
+  font-weight: bold;
+  font-family: "Gowun Dodum", sans-serif;
+  letter-spacing: 7px;
+  z-index: 999;
+}
+
+.bodyContainer {
+  width: 80%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  margin: 9vh auto; /* Center logo vertically and horizontally */
+  flex-direction: column;
+  z-index: 1;
+}
+
+.logoWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoWrapper img {
+  border-radius: 50%;
+  height: 35vh;
+  box-sizing: border-box;
+  z-index: 20;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.welcomeMessage {
+  position: absolute;
+  translate: 8vh -8vh;
+  background: var(--button-solid-text-color);
+  color: #50b34f;
+  font-weight: bold;
+  opacity: 0;
+  white-space: nowrap;
+  border-radius: 2vh;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.logoWrapper:hover img {
+  transition: 0.3s ease-in;
+  transform: scale(1.07);
+  filter: drop-shadow(0 0 1.5vh rgba(30, 255, 0, 0.7));
+  border: 2px solid var(--secondary-border-color);
+}
+
+.logoWrapper:hover .welcomeMessage {
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  translate: 18vh -14vh;;
+  font-size: 2.5vh;
+  padding: 1vh 2vh;
+  z-index: 30;
+}
+
+.logoTextContent {
+  top: 15%;
+  position: relative;
+  text-align: center;
+  font-family: "Gamja Flower", sans-serif;
+  font-size: 14vh;
+  color: var(--primary-background-color);
+  filter: drop-shadow(0 0 2vh rgba(0, 162, 255, 0.8));
+  cursor: default;
+}
+
+.chatContainer {
+  padding: 5vh 10%;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
